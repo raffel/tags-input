@@ -160,8 +160,19 @@ function tagsInput(input) {
 
 	function select(el) {
 		let sel = $('.selected');
-		if (sel) sel.classList.remove('selected');
-		if (el) el.classList.add('selected');
+		if (sel) { sel.classList.remove('selected'); }
+    if (el) {
+      let parent = el.parentNode.parentNode;
+      let rect = el.getBoundingClientRect();
+      let rectParent = parent.getBoundingClientRect();
+      el.classList.add('selected');
+      if (rect.left < rectParent.left) {
+        parent.scrollLeft = parent.scrollLeft - (rectParent.left - rect.left);
+      }
+      if (rect.right > rectParent.right) {
+        parent.scrollLeft = parent.scrollLeft + (rect.right - rectParent.right);
+      }
+    }
 	}
 
 	function savePartialInput(value, init) {

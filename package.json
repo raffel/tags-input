@@ -1,7 +1,7 @@
 {
   "name": "@pirxpilot/tags-input",
   "version": "2.1.7",
-  "main": "src.es5/tags-input.js",
+  "main": "src/tags-input.js",
   "description": "Input field for tagged values",
   "scripts": {
     "test": "make check",
@@ -22,7 +22,7 @@
     "jshint": "^2.8.0"
   },
   "files": [
-    "src.es5",
+    "src",
     "tags-input.css"
   ],
   "license": "MIT"
