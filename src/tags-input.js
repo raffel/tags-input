@@ -138,7 +138,7 @@ function tagsInput(input) {
 
 			// For duplicates, briefly highlight the existing tag
 			if (!allowDuplicates) {
-				let exisingTag = $(`[data-tag="${tag}"]`);
+				let exisingTag = $(`[data-tag="${tag.toLowerCase()}"]`);
 				if (exisingTag) {
 					exisingTag.classList.add('dupe');
 					setTimeout( () => exisingTag.classList.remove('dupe') , 100);
@@ -147,7 +147,7 @@ function tagsInput(input) {
 			}
 
 			base.insertBefore(
-				createElement('span', 'tag', tag, { tag }),
+				createElement('span', 'tag', tag, { tag: tag.toLowerCase() }),
 				base.input
 			);
 			added = true;
