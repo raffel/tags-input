@@ -233,12 +233,6 @@ function tagsInput(input) {
 		select();
 	});
 
-	base.input.addEventListener('blur', () => {
-		base.classList.remove('focus');
-		select();
-		savePartialInput();
-	});
-
 	base.input.addEventListener('keydown', e => {
 		let el = base.input,
 			key = e.keyCode || e.which,
