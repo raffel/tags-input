@@ -6,7 +6,9 @@ const BACKSPACE = 8,
 	TAB = 9,
 	ENTER = 13,
 	LEFT = 37,
+  UP = 38,
 	RIGHT = 39,
+  DOWN = 40,
 	DELETE = 46;
 
 const COPY_PROPS = ['autocomplete', 'disabled', 'readonly', 'type'];
@@ -283,6 +285,12 @@ function tagsInput(input) {
 			if (!selectedTag) return;
 			select(selectedTag.nextSibling);
 		}
+    else if (key === UP) {
+		  input.dispatchEvent(new Event('arrowup'));
+    }
+    else if (key === DOWN) {
+		  input.dispatchEvent(new Event('arrowdown'));
+    }
 		else {
 			return select();
 		}
