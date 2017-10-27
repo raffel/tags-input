@@ -132,6 +132,10 @@ function tagsInput(input) {
 			// Check input validity (eg, for pattern=)
 			// At tags-input init fill the base.input
 			base.input.value = text;
+      const prop = 'pattern';
+      if (input.hasAttribute(prop)) {
+        base.input.setAttribute(prop, input.getAttribute(prop));
+      }
 			if (!base.input.checkValidity()) {
 				base.classList.add('error');
 				setTimeout( () => base.classList.remove('error') , 150);
